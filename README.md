@@ -1,90 +1,98 @@
-IMDB-SentimentLSTM
-A TensorFlow-based Long Short-Term Memory (LSTM) neural network for sentiment analysis on the IMDB movie review dataset. This project implements a model to classify reviews as positive or negative, with code for data preprocessing, model training, evaluation, visualization of training metrics, and prediction on custom reviews. Ideal for learning about LSTMs and text classification.
-Table of Contents
-
-Project Overview
-Installation
-Usage
-Model Architecture
-Dataset
-Results
-Contributing
-License
-
-Project Overview
-This repository contains a Python script that builds, trains, and evaluates an LSTM-based neural network using TensorFlow to perform sentiment analysis on the IMDB dataset. The model classifies movie reviews as positive (1) or negative (0), with additional functionality to visualize training/validation accuracy and predict sentiments for sample and custom reviews.
-Installation
-
-Clone the repository:
-git clone https://github.com/your-username/IMDB-SentimentLSTM.git
-cd IMDB-SentimentLSTM
-
-
-Set up a virtual environment (recommended):
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# TextSentimentLSTM Project
+## Table of Contents
+- [Project Name](#project-name)
+- [About](#about)
+- [Prerequisites](#prerequisites)
+- [Features](#features)
+- [Getting Started & Installation](#getting-started--installation)
+- [Usage](#usage)
+- [Learning Outcomes](#learning-outcomes)
+- [Contributing](#contributing)
+- [License](#license)
+- [Credits & Acknowledgements](#credits--acknowledgements)
+- [Contact](#contact)
+## Project Name
+Text Sentiment LSTM
+## About
+This project implements a TensorFlow-based Long Short-Term Memory (LSTM) neural network for sentiment analysis on the IMDB movie reviews dataset. It classifies reviews as positive or negative, including data preprocessing, model training, evaluation, visualization of training metrics, and prediction on custom reviews. The project demonstrates key concepts in natural language processing (NLP) and deep learning, making it ideal for learning about LSTMs and text classification.
+## Prerequisites
+To run this project you need Python (3.6 or higher) installed on your system.
 
 
-Install dependencies:
-pip install tensorflow numpy matplotlib
+Additional libraries are required: TensorFlow, NumPy, Matplotlib.
 
 
-Verify setup:Ensure Python 3.6+ is installed, and run python --version to confirm.
+Install them using:
 
 
-Usage
+`pip install tensorflow numpy matplotlib`
 
-Run the script:
-python imdb_sentiment_lstm.py
+## Features
+This TextSentimentLSTM includes these features:
+
+-Loads and preprocesses the IMDB dataset (25,000 training and 25,000 test reviews)
+
+-Builds and trains an LSTM model for binary sentiment classification
+
+-Achieves test accuracy of approximately 85–90% after 5 epochs
+
+-Visualizes training and validation accuracy/loss over epochs using Matplotlib
+
+-Predicts sentiment for sample test reviews and custom user input
+
+-Supports customizable parameters (e.g., epochs, batch size, vocabulary size, sequence length)
+
+
+## Getting Started & Installation
+Clone the repository to your local machine:
+
+`git clone https://github.com/NickAlvarez20/TextSentimentLSTM.git`
+
+Install the required dependencies:
+
+`pip install tensorflow numpy matplotlib`
+
+## Usage
+Run the Python script (imdb_sentiment_lstm.py) from the command line:
+
+`python imdb_sentiment_lstm.py`
 
 This will:
 
-Load and preprocess the IMDB dataset (25,000 training and 25,000 test reviews).
-Train the LSTM model for 5 epochs.
-Evaluate the model on the test set.
-Print the test accuracy and predictions for the first 5 test reviews.
-Display a plot of training and validation accuracy.
-Predict sentiment for a custom review.
+-Load and preprocess the IMDB dataset
 
+-Train the LSTM model for 5 epochs with a batch size of 32
 
-Expected output:
+-Evaluate the model on the test set and print test accuracy
 
-Test accuracy (e.g., ~85–90% after 5 epochs).
-Decoded text, predicted sentiment, and actual sentiment for the first 5 test reviews.
-Predicted sentiment for a custom review.
-A plot showing training and validation accuracy over epochs.
+-Display a plot of training and validation accuracy
 
+-Predict sentiments for the first 5 test reviews and a custom review
 
-Modify the script:Adjust parameters like epochs, batch_size, max_words, or max_len in imdb_sentiment_lstm.py to experiment with different configurations.
+-You can modify parameters like epochs, batch_size, max_words, or max_len in imdb_sentiment_lstm.py to experiment with different configurations.
 
+## Learning Outcomes
+This project helped me:
 
-Model Architecture
-The LSTM model is built using TensorFlow's Keras API and consists of:
+-Learn about LSTM networks for processing sequential text data in NLP tasks
 
-Embedding Layer: Converts 10,000 unique words into 128-dimensional vectors, with input sequences of 200 words.
-LSTM Layer: 64 units to process sequential text data, capturing long-term dependencies.
-Dense Layer: 32 neurons with ReLU activation for feature processing.
-Output Layer: 1 neuron with sigmoid activation for binary classification (positive/negative).
+-Implement text preprocessing techniques (tokenization, padding, vocabulary limiting) using TensorFlow
 
-The model is compiled with the Adam optimizer and binary crossentropy loss.
-Dataset
-The IMDB dataset contains 25,000 training and 25,000 test movie reviews, labeled as positive (1) or negative (0). Reviews are preprocessed to include the 10,000 most common words and padded/truncated to 200 words, loaded via tf.keras.datasets.imdb.
-Results
-After training for 5 epochs with a batch size of 32:
+-Build, train, and evaluate deep learning models for binary classification using ai assisted development
 
-Test Accuracy: Approximately 85–90% (varies slightly due to random initialization).
-Predictions: The script outputs predicted sentiments (Positive/Negative) for the first 5 test reviews, with decoded text and confidence scores, and compares them to actual labels.
-Visualization: A plot of training and validation accuracy over epochs.
-Custom Review: Predicts sentiment for a user-defined review (e.g., "This movie was absolutely fantastic...").
+-Visualize model performance metrics using Matplotlib
 
-Contributing
-Contributions are welcome! Please:
+-Apply trained models to predict sentiment on real-world text data
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -m "Add feature").
-Push to the branch (git push origin feature-branch).
-Open a pull request.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Contributing
+This is primarily a personal learning / portfolio repository, so formal contributions aren’t required. However, if you spot bugs, have project ideas, or want to add improvements, feel free to:
+1. Fork the repo
+2. Create a feature branch
+3. Submit a pull request Please include clear explanations of your changes and test any new code.
+## License
+This repository is open and free for educational use.
+*(If you decide on a specific license later, insert it here — e.g. MIT, Apache 2.0, etc.)*
+## Credits & Acknowledgements
+This project was created by NickAlvarez20 as part of my journey to learn Python and Artificial Intelligence programming. Check out my other repositories to see more of my work!
+## Contact
+You can find more of my work at [NickAlvarez20 on GitHub](https://github.com/NickAlvarez20).
